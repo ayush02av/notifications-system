@@ -23,8 +23,7 @@ export async function getHashedPassword(password) {
 
 export async function comparePassword(passwordAttempt, passwordCorrect) {
     try {
-        const match = await bcrypt.compare(password, user.passwordHash);
-        console.log(match);
+        const match = await bcrypt.compare(passwordAttempt, passwordCorrect);
         return match;
     } catch (error) {
         throw new Error(error);
